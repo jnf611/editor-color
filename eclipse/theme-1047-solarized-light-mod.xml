@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<colorTheme id="1013" name="Solarized Light" modified="2015-03-02 23:04:03" author="jnf" website="http://ethanschoonover.com/solarized">
+<colorTheme id="1247" name="Solarized Light - mod" modified="2015-03-02 23:04:03" author="jnf" website="http://ethanschoonover.com/solarized">
     <searchResultIndication color="#ECE7D5" />
     <filteredSearchResultIndication color="#ECE7D5" />
     <occurrenceIndication color="#ECE7D5" />
@@ -7,27 +7,27 @@
     <findScope color="#BCADAD" />
     <deletionIndication color="#657A81" />
     <sourceHoverBackground color="#ECE7D5" />
-    <singleLineComment color="#93A1A1" bold="false" italic="true" />
-    <multiLineComment color="#586E75" italic="true" />
-    <commentTaskTag color="#D33682" italic="true" />
-    <javadoc color="#586E75" italic="false" />
-    <javadocLink color="#D30102" underline="false" strikethrough="false" />
-    <javadocTag color="#D30102" />
-    <javadocKeyword color="#D30102" />
-    <class color="#657A81" />
-    <interface color="#657A81" />
-    <method color="#657A81" />
-    <methodDeclaration color="#657A81" />
+    <singleLineComment color="#2aa198" bold="false" italic="true" />
+    <multiLineComment color="#2aa198" italic="true" />
+    <commentTaskTag color="#2aa198" italic="true" />
+    <javadoc color="#2aa198" italic="false" />
+    <javadocLink color="#2aa198" underline="false" strikethrough="false" />
+    <javadocTag color="#2aa198" />
+    <javadocKeyword color="#2aa198" />
+    <class color="#6c71c4" bold="false"/>
+    <interface color="#6c71c4" bold="false"/>
+    <method color="#586e75" bold="false"/>
+    <methodDeclaration color="#586e75" bold="false"/>
     <bracket color="#657A81" />
-    <number color="#2AA198" />
-    <string color="#2AA198" />
-    <operator color="#657A81" />
-    <keyword color="#B58900" bold="false" />
-    <annotation color="#D30102" />
-    <staticMethod color="#657A81" />
-    <localVariable color="#657A81" />
-    <localVariableDeclaration color="#657A81" />
-    <field color="#657A81" />
+    <number color="#586e75" />
+    <string color="#cb4b16" />
+    <operator color="#586e75" />
+    <keyword color="#268bd2" bold="false" />
+    <annotation color="#D30102" bold="false"/>
+    <staticMethod color="#657A81" bold="false"/>
+    <localVariable color="#657A81" bold="false"/>
+    <localVariableDeclaration color="#657A81" bold="false"/>
+    <field color="#657A81" bold="false"/>
     <staticField color="#657A81" />
     <staticFinalField color="#657A81" />
     <deprecatedMember color="#657A81" />
@@ -38,10 +38,10 @@
     <typeArgument color="#657A81" />
     <typeParameter color="#657A81" />
     <constant color="#00FF00" />
-    <background color="#FDF6E3" />
-    <currentLine color="#FDF6E3" />
-    <foreground color="#657A81" />
-    <lineNumber color="#586E75" />
+    <background color="#fdf6e3" />
+    <currentLine color="#eee8d5" />
+    <foreground color="#586e75" />
+    <lineNumber color="#657b83" />
     <selectionBackground color="#ECE7D5" />
-    <selectionForeground color="#596D73" />
+    <selectionForeground color="#dbd4be" />
 </colorTheme>
