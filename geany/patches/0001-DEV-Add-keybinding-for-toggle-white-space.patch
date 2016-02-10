@@ -1,0 +1,78 @@
+From e6cb9da8db096621bcb3b9832c3e34f0ff1cbd01 Mon Sep 17 00:00:00 2001
+From: Julien Fromeyer <julien.fromeyer@parrot.com>
+Date: Wed, 10 Feb 2016 18:39:06 +0100
+Subject: [PATCH] [DEV] Add keybinding for toggle white space
+
+Change-Id: I15b4645aa6542beef8a29939855a586c287d9c9d
+---
+ src/callbacks.c   | 2 +-
+ src/callbacks.h   | 2 ++
+ src/keybindings.c | 6 ++++++
+ src/keybindings.h | 1 +
+ 4 files changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/src/callbacks.c b/src/callbacks.c
+index 92872fa..72718ff 100644
+--- a/src/callbacks.c
++++ b/src/callbacks.c
+@@ -652,7 +652,7 @@ static void on_show_line_numbers1_toggled(GtkCheckMenuItem *checkmenuitem, gpoin
+ }
+ 
+ 
+-static void on_menu_show_white_space1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data)
++void on_menu_show_white_space1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data)
+ {
+ 	if (ignore_callback)
+ 		return;
+diff --git a/src/callbacks.h b/src/callbacks.h
+index 6017b1e..c68d78f 100644
+--- a/src/callbacks.h
++++ b/src/callbacks.h
+@@ -121,6 +121,8 @@ void on_menu_select_all1_activate(GtkMenuItem *menuitem, gpointer user_data);
+ 
+ void on_menu_show_sidebar1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
+ 
++void on_menu_show_white_space1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
++
+ void on_menu_comment_line1_activate(GtkMenuItem *menuitem, gpointer user_data);
+ 
+ void on_menu_uncomment_line1_activate(GtkMenuItem *menuitem, gpointer user_data);
+diff --git a/src/keybindings.c b/src/keybindings.c
+index 8913c57..cd26b79 100644
+--- a/src/keybindings.c
++++ b/src/keybindings.c
+@@ -584,6 +584,9 @@ static void init_default_kb(void)
+ 	add_kb(group, GEANY_KEYS_VIEW_MESSAGEWINDOW, cb_func_menu_messagewindow,
+ 		0, 0, "menu_messagewindow", _("Toggle Messages Window"),
+ 		"menu_show_messages_window1");
++	// JF
++	add_kb(group, GEANY_KEYS_VIEW_WHITESPACE, NULL,
++		0, 0, "toggle_whitespace", _("Toggle WhiteSpace"), "menu_show_whitepace");
+ 	add_kb(group, GEANY_KEYS_VIEW_SIDEBAR, NULL,
+ 		0, 0, "toggle_sidebar", _("Toggle Sidebar"), "menu_show_sidebar1");
+ 	add_kb(group, GEANY_KEYS_VIEW_ZOOMIN, NULL,
+@@ -1570,6 +1573,9 @@ static gboolean cb_func_view_action(guint key_id)
+ 		case GEANY_KEYS_VIEW_SIDEBAR:
+ 			on_menu_show_sidebar1_toggled(NULL, NULL);
+ 			break;
++		case GEANY_KEYS_VIEW_WHITESPACE:
++			on_menu_show_white_space1_toggled(NULL, NULL);
++			break;
+ 		case GEANY_KEYS_VIEW_ZOOMIN:
+ 			on_zoom_in1_activate(NULL, NULL);
+ 			break;
+diff --git a/src/keybindings.h b/src/keybindings.h
+index 3a54e48..38d3306 100644
+--- a/src/keybindings.h
++++ b/src/keybindings.h
+@@ -266,6 +266,7 @@ enum GeanyKeyBindingID
+ 	GEANY_KEYS_GOTO_LINESTARTVISUAL,			/**< Keybinding. */
+ 	GEANY_KEYS_DOCUMENT_CLONE,					/**< Keybinding. */
+ 	GEANY_KEYS_FILE_QUIT,						/**< Keybinding. */
++	GEANY_KEYS_VIEW_WHITESPACE,					/**< Keybinding. */
+ 	GEANY_KEYS_COUNT	/* must not be used by plugins */
+ };
+ 
+-- 
+1.9.1
+
