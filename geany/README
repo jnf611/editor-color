@@ -6,3 +6,4 @@ patches
 	
 color scheme
 	copy in geany config folder ~/.config/geany/colorschemes
+	View/Change Color Scheme/ select new scheme
