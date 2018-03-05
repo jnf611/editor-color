@@ -1,0 +1,39 @@
+--------------------------------------------------------------------------------
+- Partitions
+
+For personnal setup
+/
+/home
+(/media/data : windows partition) //TODO
+swap
+
+Home folder organisation
++-dev
++-tools
+    +-softs    Installed programs not from apt-get 
+    +-config    Configuration files (repo on git hub)
+
+--------------------------------------------------------------------------------
+- Softs
+qtcreator (or eclipse+cdt)
+terminator
+tree
+build-essential
+
+- Extra dev tools
+modelio
+yEd
+valgrind
+googletest/crpcut/cxxunit/gmock
+
+- Desktop 
+If installing cinnamon on ubuntu
+sudo add-apt-repository ppa:kranich/cinnamon && sudo apt-get update && sudo apt-get install cinnamon;
+
+Il arrive que cinnamon ne fonctionne plus suite à une mise à jour.
+ASTUCE : il suffit de le désinstaller puis de le ré-installer :
+sudo apt-get autoremove --yes --purge cinnamon; sudo apt-get install --yes cinnamon;
+
+--------------------------------------------------------------------------------
+- Configuration
+Change sshd default port
