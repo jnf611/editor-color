@@ -37,3 +37,11 @@ sudo apt-get autoremove --yes --purge cinnamon; sudo apt-get install --yes cinna
 --------------------------------------------------------------------------------
 - Configuration
 Change sshd default port
+
+- Hot keys:
+Install Autokey
+sudo apt-get install autokey-gtk
+    - Date:
+Modify existing date script
+output = system.exec_command("date '+%F'")
+keyboard.send_keys(output)
