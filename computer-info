@@ -1,0 +1,20 @@
+########################################################################
+### Dell xps
+
+Drivers can be selected in Menu/Administration/Driver Manager
+Nvidia driver/gpu use is not straigthforward
+Best working solution (unless more computing power is required) is to
+use open source driver "nouveau" (does this really use the graphic card
+or just intel integrated GPU ?) under kernel 4.8
+4.10 seems to require the nvidia driver ?
+Also it seems that propriary driver should be removed/reinstalled when
+switching kernel
+
+References:
+https://doc.ubuntu-fr.org/nvidia
+
+Tests
+               nouveau                       nvidia
+4.8            working                       not tested
+
+4.10           not working                   working with fan overuse
