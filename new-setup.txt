@@ -12,6 +12,7 @@ swap
 +-tools
     +-softs    Installed programs not from apt-get 
     +-config    Configuration files (repo on git hub)
+       +-dictionaries    Untracked folder to store dictionaries
 
 ########################################################################
 ### Softs
@@ -23,6 +24,10 @@ compilation: build-essential
 modeling: modelio yEd
 debuging: valgrind
 testing: googletest/crpcut/cxxunit/gmock
+
+# Qtcreator
+Do not use package installation
+Follow google doc
 
 # Desktop, if installing cinnamon on ubuntu
 sudo add-apt-repository ppa:kranich/cinnamon
