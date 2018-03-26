@@ -9,8 +9,12 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 # aliases for git
 #git aliases
 alias gitka='gitk --all'
-alias gitl='git log --abbrev-commit --pretty=oneline'
+alias gitl='git log --abbrev-commit --pretty=oneline -20'
 alias gitcl='killall wish'
-alias gitcp='git cherry-pick'
+__git_complete gitco _git_checkout
 alias gitco='git checkout'
+alias gitcp='git cherry-pick'
+alias gitgr='git grep -iIn'
+alias gitrc='git rebase --continue'
+alias gitra='git rebase --abort'
 GIT_PS1_SHOWDIRTYSTATE=TRUE
