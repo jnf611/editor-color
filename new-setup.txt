@@ -10,7 +10,8 @@ swap
 # Home folder organisation
 +-dev
 +-tools
-    +-softs    Installed programs not from apt-get 
+    +-softs     Installed programs not from apt-get
+    +-scripts   Personnal scripts
     +-config    Configuration files (repo on git hub)
        +-dictionaries    Untracked folder to store dictionaries
 
@@ -54,10 +55,16 @@ git config --global core.editor gedit
 git config --global push.default simple
 
 # Bash
-Follow bashrc/config
+Follow bashrc/README.md
 
 # Geany
-Follow geany/README
+Follow geany/README.md
+
+# Terminator
+- Infinite scrollback: Preferences/Profiles/Scrolling: tick "Infinite Scrollback"
+- Layout:
+	Create adapted layout and save
+	In .config/terminator/config, replace default by new layout
 
 # Redshift
 Add to startup application with manual parameter
