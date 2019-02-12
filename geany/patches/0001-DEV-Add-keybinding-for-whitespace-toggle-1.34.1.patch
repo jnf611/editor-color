@@ -1,0 +1,76 @@
+From 4ad3834500b97406e5946efa660d444ecdee02c4 Mon Sep 17 00:00:00 2001
+From: Julien Fromeyer <julien.fromeyer@parrot.com>
+Date: Tue, 12 Feb 2019 17:19:00 +0100
+Subject: [PATCH] [DEV] Add keybinding for whitespace toggle 1.34.1
+
+---
+ src/callbacks.c   | 2 +-
+ src/callbacks.h   | 2 ++
+ src/keybindings.c | 5 +++++
+ src/keybindings.h | 1 +
+ 4 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/src/callbacks.c b/src/callbacks.c
+index ffe5920..6fb2a03 100644
+--- a/src/callbacks.c
++++ b/src/callbacks.c
+@@ -667,7 +667,7 @@ static void on_show_line_numbers1_toggled(GtkCheckMenuItem *checkmenuitem, gpoin
+ }
+ 
+ 
+-static void on_menu_show_white_space1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data)
++void on_menu_show_white_space1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data)
+ {
+ 	if (ignore_callback)
+ 		return;
+diff --git a/src/callbacks.h b/src/callbacks.h
+index c77b781..058baaf 100644
+--- a/src/callbacks.h
++++ b/src/callbacks.h
+@@ -105,6 +105,8 @@ void on_help1_activate(GtkMenuItem *menuitem, gpointer user_data);
+ 
+ void on_toolbutton_compile_clicked(GtkAction *action, gpointer user_data);
+ 
++void on_menu_show_white_space1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
++
+ void on_line_wrapping1_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
+ 
+ void on_toolbutton_goto_entry_activate(GtkAction *action, const gchar *text, gpointer user_data);
+diff --git a/src/keybindings.c b/src/keybindings.c
+index 84a8c7e..798ea18 100644
+--- a/src/keybindings.c
++++ b/src/keybindings.c
+@@ -607,6 +607,8 @@ static void init_default_kb(void)
+ 	add_kb(group, GEANY_KEYS_VIEW_MESSAGEWINDOW, cb_func_menu_messagewindow,
+ 		0, 0, "menu_messagewindow", _("Toggle Messages Window"),
+ 		"menu_show_messages_window1");
++	add_kb(group, GEANY_KEYS_VIEW_WHITESPACE, NULL,
++		0, 0, "toggle_whitespace", _("Toggle White Spaces"), "menu_show_white_space1");
+ 	add_kb(group, GEANY_KEYS_VIEW_SIDEBAR, NULL,
+ 		0, 0, "toggle_sidebar", _("Toggle Sidebar"), "menu_show_sidebar1");
+ 	add_kb(group, GEANY_KEYS_VIEW_ZOOMIN, NULL,
+@@ -1629,6 +1631,9 @@ static gboolean cb_func_view_action(guint key_id)
+ 		case GEANY_KEYS_VIEW_ZOOMRESET:
+ 			on_normal_size1_activate(NULL, NULL);
+ 			break;
++		case GEANY_KEYS_VIEW_WHITESPACE:
++			on_menu_show_white_space1_toggled(NULL, NULL);
++			break;
+ 		default:
+ 			break;
+ 	}
+diff --git a/src/keybindings.h b/src/keybindings.h
+index ed40f62..c6217d7 100644
+--- a/src/keybindings.h
++++ b/src/keybindings.h
+@@ -276,6 +276,7 @@ enum GeanyKeyBindingID
+ 	GEANY_KEYS_EDITOR_DELETELINETOBEGINNING,	/**< Keybinding. */
+ 	GEANY_KEYS_DOCUMENT_STRIPTRAILINGSPACES,	/**< Keybinding. 
+ 												 * @since 1.34 (API 238) */
++	GEANY_KEYS_VIEW_WHITESPACE,					/**< Keybinding. */
+ 	GEANY_KEYS_COUNT	/* must not be used by plugins */
+ };
+ 
+-- 
+2.17.1
+
