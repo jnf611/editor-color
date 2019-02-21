@@ -1,0 +1,15 @@
+### Private keys
+save content of ~/.ssh
+
+### Check configuration modification vs config-editor repo
+- bash: ~/.bashrc
+- geany colorschemes
+- qt configuration
+
+### Check content of home
+save contents of home folder to persistent drives
+  ~/Documents
+  ~/Pictures
+  ~/Music
+
+### Commit ~/dev/learn modifications in respective git projects

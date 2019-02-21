@@ -5,15 +5,21 @@
 /
 /home
 (/media/data : windows partition) //TODO
-swap
+swap -> no swap on ssd
 
 # Home folder organisation
 +-dev
+    + docs
+    + music     Save of folders accross installation
+    + pictures
 +-tools
     +-softs     Installed programs not from apt-get
     +-scripts   Personnal scripts
     +-config    Configuration files (repo on git hub)
        +-dictionaries    Untracked folder to store dictionaries
+
+create symlink from distribution folders to respective ~/dev folder:
+    ln -s ~/dev/docs ~/Documents/docs
 
 ########################################################################
 ### Softs
