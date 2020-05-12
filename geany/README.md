@@ -12,3 +12,14 @@ patches
 color scheme
 	copy in geany config folder ~/.config/geany/colorschemes
 	View/Change Color Scheme/ select new scheme
+
+configuration
+replace:
+x-terminal-emulator -e "/bin/bash %c"
+by:
+gnome-terminal -e "/bin/bash %c"
+
+keybinding
+Compile: F8
+Build: F9
+Run: Ctrl+F9
