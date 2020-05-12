@@ -80,6 +80,12 @@ Then change icons
 /usr/share/icons/hicolor/scalable/apps/redshift-status-on.svg
 
 # Hot keys
+
+## Alt+tab on Ubuntu
+Settings > Devices > Keyboard.
+Replace "Alt+Tab" shortcut for "Switch Windows" instead of "Switch Applications".
+
+##
 Remove icon from notification bar
 Date:
 Modify existing date script
