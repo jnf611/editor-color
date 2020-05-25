@@ -53,12 +53,17 @@ https://lehollandaisvolant.net/linux/checklist/#remove
 # Ssh
 Change sshd default port (pin code)
 
+# openvpn
+https://community.openvpn.net/openvpn/wiki/OpenvpnSoftwareRepos
+
 # Git
 For personal computer
 git config --global user.name "jnf611"
 git config --global user.email jnf611@gmail.com
 git config --global core.editor gedit
 git config --global push.default simple
+
+Update git version to allow auto-completion (see .bashrc)
 
 # Bash
 Follow bashrc/README.md
@@ -71,6 +76,8 @@ Follow geany/README.md
 - Layout:
 	Create adapted layout and save
 	In .config/terminator/config, replace default by new layout
+- Color scheme:
+	Preferences/Profiles/Color/Built in schemes/Solarized dark
 
 # Redshift
 Add to startup application with manual parameter

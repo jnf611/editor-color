@@ -1,6 +1,9 @@
 ### Private keys
 save content of ~/.ssh
 
+### VPN configuration
+save ~/openvpn format
+
 ### Check configuration modification vs config-editor repo
 - bash: ~/.bashrc
 - geany colorschemes
