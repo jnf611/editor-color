@@ -99,3 +99,11 @@ Modify existing date script
 output = system.exec_command("date '+%F'")
 keyboard.send_keys(output)
 Set hotkey to CRTL+;
+
+# fstab
+remove last access date for faster drive
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx / ext4 noatime,nodiratime,errors=remount-ro 0 1
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /home ext4 defaults,noatime,nodiratime 0 2
+
+set /tmp file in ram: reduce ssd usage
+tmpfs /tmp tmpfs defaults,noatime,mode=1777,nosuid,size=512M 0 0
